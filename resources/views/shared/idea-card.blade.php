@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div>
-                <form method="POST" action="{{ route('idea.destroy', $idea->id) }}">
+                <form method="POST" action="{{ route('ideas.destroy', $idea->id) }}">
                     @csrf
                     @method('delete')
                     <a class="mx-2" href="{{ route('ideas.edit', $idea->id) }}"> Edit </a>
