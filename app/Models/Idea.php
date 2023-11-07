@@ -16,11 +16,16 @@ class Idea extends Model
     // ];
 
     protected $fillable = [ // อธิบาย คือ protected $fillable คือ การกำหนดว่า คอลัมน์ไหนบ้างที่อนุญาติให้เขียนข้อมูลลงไป
+        'user_id',
         'content',
         'like'
     ];
 
     public function comments(){
         return $this->hasMany(Comment::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }
