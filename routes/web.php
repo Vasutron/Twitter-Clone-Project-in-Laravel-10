@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\IdeaController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Idea;
@@ -23,9 +24,12 @@ Route::resource('users',UserController::class)->only(['show','edit','update'])->
 
 Route::get('profile',[UserController::class,'profile'])->middleware('auth')->name('profile');
 
+Route::post('users/{user}/follow',[FollowerController::class,'follow'])->middleware('auth')->name('users.follow');
+Route::post('users/{user}/unfollow',[FollowerController::class,'unfollow'])->middleware('auth')->name('users.unfollow');
+
 Route::get('/terms', function (){
     return view('terms');
 } );
 
 
-// https://www.youtube.com/watch?v=986iFLWJ8o8&list=PLqDySLfPKRn5d7WbN9R0yJA9IRgx-XBlU&index=28
+// https://www.youtube.com/watch?v=piBCbN3gqJ0&list=PLqDySLfPKRn5d7WbN9R0yJA9IRgx-XBlU&index=29
