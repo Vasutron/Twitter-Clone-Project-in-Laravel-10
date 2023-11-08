@@ -32,4 +32,4 @@ Route::get('/terms', function (){
 } );
 
 
-// https://www.youtube.com/watch?v=piBCbN3gqJ0&list=PLqDySLfPKRn5d7WbN9R0yJA9IRgx-XBlU&index=29
+// https://www.youtube.com/watch?v=bwk1EEKKcN4&list=PLqDySLfPKRn5d7WbN9R0yJA9IRgx-XBlU&index=30
