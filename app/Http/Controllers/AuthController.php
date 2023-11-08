@@ -34,7 +34,7 @@ class AuthController extends Controller
             ]
         );
 
-        return redirect()->route('dashboard')->with('success', 'Account created successfully!');
+        return redirect()->route('dashboard')->with('success', 'สร้างบัญชีสำเร็จ!');
 
 
     }
@@ -56,11 +56,11 @@ class AuthController extends Controller
         if(auth()->attempt($validated)){
             request()->session()->regenerate(); // ป้องกันการเปลี่ยนแปลง session ของคนอื่น
 
-            return redirect()->route('dashboard')->with('success', 'เข้าสู่ระบบสำเร็จ!)');
+            return redirect()->route('dashboard')->with('success', 'เข้าสู่ระบบสำเร็จ!');
         }
 
         return redirect()->route('login')->withErrors([
-            'email' => 'ไม่พบผู้ใช้ที่ตรงกับอีเมลและรหัสผ่านที่ให้ไว้'
+            'email' => 'ไม่พบผู้ใช้ที่ตรงกับอีเมล และรหัสผ่าน'
         ]);
 
     }

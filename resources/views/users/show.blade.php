@@ -11,6 +11,7 @@
                 @include('shared.user-card')
             </div>
             <hr>
+            @include('shared.submit-idea')
 
             @forelse ($ideas as $idea)
                 <div class="mt-3">
