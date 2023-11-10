@@ -29,7 +29,7 @@ Route::post('users/{user}/unfollow',[FollowerController::class,'unfollow'])->mid
 
 Route::get('/terms', function (){
     return view('terms');
-} );
+} )->name('terms');
 
 
-// https://www.youtube.com/watch?v=bwk1EEKKcN4&list=PLqDySLfPKRn5d7WbN9R0yJA9IRgx-XBlU&index=30
+// https://www.youtube.com/watch?v=7wRwQoOuRyk&list=PLqDySLfPKRn5d7WbN9R0yJA9IRgx-XBlU&index=31
