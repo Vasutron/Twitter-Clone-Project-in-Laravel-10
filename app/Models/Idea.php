@@ -15,11 +15,13 @@ class Idea extends Model
     //     'updated_at'
     // ];
 
-    protected $fillable = [ // อธิบาย คือ protected $fillable คือ การกำหนดว่า คอลัมน์ไหนบ้างที่อนุญาติให้เขียนข้อมูลลงไป
+    protected $with = ['user:id,name,image','comments.user:id,name,image']; // คือ การดึงข้อมูล user มาด้วย และ comments.user ดึงข้อมูล user ของ comment มาด้วย เพื่อลดโหลดการดึงข้อมูล และ ให้แสดงผลเป็น json ได้เลย
+
+    protected $fillable = [
         'user_id',
         'content',
         'like'
-    ];
+    ]; // อธิบาย คือ protected $fillable คือ การกำหนดว่า คอลัมน์ไหนบ้างที่อนุญาติให้เขียนข้อมูลลงไป
 
     public function comments(){
         return $this->hasMany(Comment::class);

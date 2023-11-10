@@ -14,6 +14,8 @@ class DashboardController extends Controller
 
         // return new WelcomeEmail(auth()->user());
 
+        // $ideas = Idea::with('user','comments.user')->orderBy('created_at', 'DESC'); // เพิ่ม with ดึงข้อมูล user มาด้วย และ comments.user ดึงข้อมูล user ของ comment มาด้วย เพื่อลดโหลดการดึงข้อมูล
+
         $ideas = Idea::orderBy('created_at', 'DESC');
 
         if(request()->has('search')){

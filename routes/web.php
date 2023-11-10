@@ -32,4 +32,4 @@ Route::get('/terms', function (){
 } )->name('terms');
 
 
-// https://www.youtube.com/watch?v=7wRwQoOuRyk&list=PLqDySLfPKRn5d7WbN9R0yJA9IRgx-XBlU&index=31
+// https://www.youtube.com/watch?v=4woUUNv21Ug&list=PLqDySLfPKRn5d7WbN9R0yJA9IRgx-XBlU&index=33
