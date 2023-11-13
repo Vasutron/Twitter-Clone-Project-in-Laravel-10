@@ -16,6 +16,10 @@
                         <a href="{{ route('users.edit', $user->id) }}">แก้ไข</a>
                     @endif
                 @endauth
+
+                {{-- @can('update', $user)
+                    <a href="{{ route('users.edit', $user->id) }}">แก้ไข</a>
+                @endcan --}}
             </div>
         </div>
         <div class="px-2 mt-4">
