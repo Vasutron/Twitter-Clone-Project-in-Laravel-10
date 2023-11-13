@@ -1,0 +1,5 @@
+@extends('layout.layout')
+
+@section('content')
+    <h1>Admin Panal</h1>
+@endsection

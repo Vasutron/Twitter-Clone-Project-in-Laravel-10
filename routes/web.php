@@ -8,6 +8,7 @@ use App\Http\Controllers\IdeaController;
 use App\Http\Controllers\IdeaLikeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FeedController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Models\Idea;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -40,4 +41,4 @@ Route::get('/terms', function (){
 } )->name('terms');
 
 
-// https://www.youtube.com/watch?v=4woUUNv21Ug&list=PLqDySLfPKRn5d7WbN9R0yJA9IRgx-XBlU&index=33
+Route::get('/admin',[AdminDashboardController::class, 'index'] )->name('admin.dashboard')->middleware(['auth','admin']);
