@@ -28,7 +28,7 @@ class IdeaController extends Controller
 
     public function destroy(Idea $idea)
     {
-        $this->authorize('idea.delete',$idea);
+        $this->authorize('delete',$idea); // ตรวจสอบว่า user ที่ login มีสิทธิ์ edit หรือไม่ จากคำสั่ง authorize ใน app/Policies/IdeaPolicy.php
 
         $idea->delete();
 
@@ -37,7 +37,7 @@ class IdeaController extends Controller
 
     public function edit(Idea $idea)
     {
-        $this->authorize('idea.edit',$idea);
+        $this->authorize('update',$idea);
 
 
         $editing = true;
@@ -47,7 +47,7 @@ class IdeaController extends Controller
 
     public function update(Idea $idea){
 
-        $this->authorize('idea.edit',$idea);
+        $this->authorize('update',$idea);
 
         $validated = request()->validate([
             'content' => 'required|min:3|max:240'
