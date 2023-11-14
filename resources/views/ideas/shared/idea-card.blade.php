@@ -2,8 +2,7 @@
     <div class="px-3 pt-4 pb-2">
         <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-                <img style="width:50px" class="me-2 avatar-sm rounded-circle"
-                    src="{{ $idea->user->getImageURL() }}"
+                <img style="width:50px" class="me-2 avatar-sm rounded-circle" src="{{ $idea->user->getImageURL() }}"
                     alt="{{ $idea->user->name }}">
                 <div>
                     <h5 class="card-title mb-0"><a href="{{ route('users.show', $idea->user->id) }}">
@@ -11,25 +10,10 @@
                         </a></h5>
                 </div>
             </div>
-
             <div class="d-flex">
                 <a href="{{ route('ideas.show', $idea->id) }}"> View </a>
                 @auth()
-                    @if (Auth::id() === $idea->user_id)
-                        <a class="mx-2" href="{{ route('ideas.edit', $idea->id) }}"> Edit </a>
-                        <form method="POST" action="{{ route('ideas.destroy', $idea->id) }}">
-                            @csrf
-                            @method('delete')
-                            <button class="ms-1 btn btn-danger btn-sm"> X </button>
-                        </form>
-                    @endif
-                @endauth
-            </div>
-
-            {{-- <div class="d-flex">
-                <a href="{{ route('ideas.show', $idea->id) }}"> View </a>
-                @auth()
-                    @can('update', $idea)
+                    @can('idea.edit', $idea)
                         <a class="mx-2" href="{{ route('ideas.edit', $idea->id) }}"> Edit </a>
                         <form method="POST" action="{{ route('ideas.destroy', $idea->id) }}">
                             @csrf
@@ -38,8 +22,7 @@
                         </form>
                     @endcan
                 @endauth
-            </div> --}}
-
+            </div>
         </div>
     </div>
     <div class="card-body">
@@ -67,7 +50,7 @@
             <div>
                 <span class="fs-6 fw-light text-muted"> <span class="fas fa-clock"> </span>
                     {{ $idea->created_at->diffForHumans() }} </span>
-                    {{-- {{ $idea->created_at->toDateTimeString() }} --}}
+                {{-- {{ $idea->created_at->toDateTimeString() }} --}}
             </div>
         </div>
         @include('ideas.shared.comments-box')
