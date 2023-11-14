@@ -26,7 +26,6 @@ class DashboardController extends Controller
             'ideas' => $ideas->paginate(5)
         ]);
     }
-
 }
 
 // https://www.youtube.com/watch?v=R58XZ8pAXoE&list=PLqDySLfPKRn5d7WbN9R0yJA9IRgx-XBlU&index=18

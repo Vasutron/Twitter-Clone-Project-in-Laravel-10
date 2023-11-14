@@ -17,6 +17,8 @@ class Idea extends Model
 
     protected $with = ['user:id,name,image','comments.user:id,name,image']; // คือ การดึงข้อมูล user มาด้วย และ comments.user ดึงข้อมูล user ของ comment มาด้วย เพื่อลดโหลดการดึงข้อมูล และ ให้แสดงผลเป็น json ได้เลย
 
+    protected $withCount = ['likes'];
+
     protected $fillable = [
         'user_id',
         'content',

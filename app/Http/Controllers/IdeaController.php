@@ -40,7 +40,6 @@ class IdeaController extends Controller
     {
         $this->authorize('update',$idea);
 
-
         $editing = true;
 
         return view('ideas.show',compact('idea','editing'));
