@@ -18,5 +18,6 @@
 @guest
     <h4> โปรดเข้าสู่ระบบ เพื่อแชร์ไอเดียของคุณ! </h4>
     <br>
-    <span> Login To Share yours ideas! </span>
+    {{-- <span> Login To Share yours ideas! </span> --}}
+    <span> {{ __('ideas.login_to_share') }} </span>
 @endguest
