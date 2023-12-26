@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,7 +23,7 @@ class Idea extends Model
     protected $fillable = [
         'user_id',
         'content',
-    ]; // อธิบาย คือ protected $fillable คือ การกำหนดว่า คอลัมน์ไหนบ้างที่อนุญาติให้เขียนข้อมูลลงไป
+    ]; // protected $fillable คือ การกำหนดว่า คอลัมน์ไหนบ้างที่อนุญาติให้เขียนข้อมูลลงไป
 
     public function comments(){
         return $this->hasMany(Comment::class);
@@ -35,4 +36,10 @@ class Idea extends Model
     public function likes(){
         return $this->belongsToMany(User::class,'idea_like')->withTimestamps();
     }
+
+    public function scopeSearch($query, $search = '')
+    {
+        $query->where('content', 'like', '%' . $search . '%');
+    }
+
 }
