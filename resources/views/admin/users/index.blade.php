@@ -1,6 +1,6 @@
 @extends('layout.app')
 {{--  Admin Dashboard  --}}
-@section('title', 'Admin Dashboard')
+@section('title', 'Users | Admin Dashboard')
 @section('content')
     <div class="row">
         <div class="col-3">
