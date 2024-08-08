@@ -25,6 +25,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
     </script>
+
+    <script>
+        const counters=document.querySelectorAll('.counter')
+        counters.forEach(counter=>{
+            counter.innerText='0'
+            const updateCounter=()=>{
+                const target = +counter.getAttribute('data-target')
+                const start =+counter.innerText
+                const increment=target/200
+                if(start<target){
+                    counter.innerText= `${Math.ceil(start+increment)}`
+                    setTimeout(updateCounter,1)
+                }else{
+                    counter.innerText=target
+                }
+            }
+            updateCounter()
+        })
+    </script>
 </body>
 
 </html>
